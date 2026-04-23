@@ -20,6 +20,3 @@ if st.button("Construir histograma"):
     fig = px.histogram(df, x="odometer")
     st.plotly_chart(fig)
 
-if st.button("Construir dispersión"):
-    fig = px.scatter(df, x="odometer", y="price")
-    st.plotly_chart(fig)
