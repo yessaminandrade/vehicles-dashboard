@@ -2,6 +2,11 @@ import pandas as pd
 import plotly.express as px
 import streamlit as st
 
+import os
+import streamlit as st
+
+st.set_page_config(layout="wide")
+
 df = pd.read_csv('vehicles_us.csv')
 
 # limpiar datos extremos
