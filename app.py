@@ -10,6 +10,12 @@ df = df[df["price"] < 100000]
 
 st.header("Dashboard de vehículos")
 
+tipo = st.selectbox("Tipo de vehículo", df["type"].dropna().unique())
+df_filtrado = df[df["type"] == tipo]
+
+fig = px.scatter(df_filtrado, x="odometer", y="price", color="condition")
+st.plotly_chart(fig)
+
 if st.button("Construir histograma"):
     fig = px.histogram(df, x="odometer")
     st.plotly_chart(fig)
